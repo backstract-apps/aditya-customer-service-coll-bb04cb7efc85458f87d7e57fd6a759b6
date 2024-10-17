@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aditya-customer-service-coll-bb04cb7efc85458f87d7e57fd6a759b6-depl
+  labels:
+    app: aditya-customer-service-coll-bb04cb7efc85458f87d7e57fd6a759b6
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aditya-customer-service-coll-bb04cb7efc85458f87d7e57fd6a759b6
+  template:
+    metadata:
+      labels:
+        app: aditya-customer-service-coll-bb04cb7efc85458f87d7e57fd6a759b6
+    spec:
+      containers:
+        - name: aditya-customer-service-coll-bb04cb7efc85458f87d7e57fd6a759b6
+          image: 216084506783.dkr.ecr.ap-south-1.amazonaws.com/backstract_apps:aditya-customer-service-coll-bb04cb7efc85458f87d7e57fd6a759b6
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9006
